@@ -16,7 +16,7 @@ h1 {
 
 .subtitle {
   font-weight: 700;
-  font-size: .75rem;
+  font-size: .8rem;
   color: #1792d3;
 }
 
@@ -26,17 +26,24 @@ footer p {
 }
 
 /* ********************
-Layout 
+Header Layout 
 *********************** */
 
-/* Container constrains the screen to the viewport */
-.container {
+.container-body {
   display: flex;
-  flex:1;
+  flex: 1;
   flex-direction: column;
   height: 100vh;
-  width: 90%;
+}
+
+header {
+  background: #f8f8f8;
+  padding: 2em 0;
+}
+
+.container {
   max-width: 900px;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -48,11 +55,6 @@ Layout
 /* .subheader, nav {
   border: 1px solid magenta;
 } */
-
-header {
-  background: #f8f8f8;
-  padding: 2em 0;
-}
 
 footer {
   text-align: center;
@@ -90,12 +92,18 @@ nav a:focus {
     /* padding for this item is in the parent - nav a */
 }
 
-/* Main content */
+/* ********************
+Main Layout 
+*********************** */
 
 main {
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   height: 100%;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
 }
+
 
 /* ********************
 Screen Changes
@@ -103,12 +111,12 @@ Screen Changes
 
 
 @media (max-width: 675px) {
-  .container-nav {
-    flex-direction: column;
-  }
-
   header {
     text-align: center;
+  }
+  
+  .container-nav {
+    flex-direction: column;
   }
 
   nav ul {
