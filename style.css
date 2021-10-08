@@ -20,6 +20,11 @@ h1 {
   color: #1792d3;
 }
 
+footer p {
+  font-weight: 700;
+  color: #707070;
+}
+
 /* ********************
 Layout 
 *********************** */
@@ -30,23 +35,34 @@ Layout
   flex:1;
   flex-direction: column;
   height: 100vh;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-header, footer {
+.container-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .subheader, nav {
+  border: 1px solid magenta;
+} */
+
+header {
+  background: #f8f8f8;
+  padding: 2em 0;
+}
+
+footer {
   text-align: center;
   background: #f8f8f8;
   padding:2em 0;
 }
 
-footer {
-  font-weight: 700;
-  color:  #707070;
-}
-
 /* Navigation */
 
 nav ul {
-  /* border: 1px solid magenta; */
   list-style: none;
   padding: 0;
   display: flex;
@@ -54,12 +70,10 @@ nav ul {
 }
 
 nav li {
-  /* border: 2px dotted orange; */
-  margin: 0 1em;
+  margin-left: 2em;
 }
 
 nav a {
-  /* border: 2px solid green; */
   text-decoration: none;
   color: #707070;
   font-weight: 700;
@@ -87,7 +101,16 @@ main {
 Screen Changes
 *********************** */
 
+
 @media (max-width: 675px) {
+  .container-nav {
+    flex-direction: column;
+  }
+
+  header {
+    text-align: center;
+  }
+
   nav ul {
     flex-direction: column;
   }
