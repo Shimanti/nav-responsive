@@ -1,23 +1,36 @@
 body {
   margin: 0;
-  font-family:  'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.6;
 }
 
 /* ********************
-Typography 
+Typography
 *********************** */
 
-h1 {
-  margin: 0;
-  font-weight: 400;
-  font-size: 2rem;
-  color: #143774;
+h1,
+h2,
+h3 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    color: #143774;
+    margin-top: 0;
 }
 
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* h1 subtitle */
 .subtitle {
-  font-weight: 700;
-  font-size: .8rem;
-  color: #1792d3;
+    font-weight: 700;
+    color: #1792d2;
+    font-size: .75rem;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 footer p {
@@ -26,7 +39,7 @@ footer p {
 }
 
 /* ********************
-Header Layout 
+Layout
 *********************** */
 
 .container-body {
@@ -37,8 +50,17 @@ Header Layout
 }
 
 header {
-  background: #f8f8f8;
-  padding: 2em 0;
+    background: #f8f8f8;
+    padding: 2em 0;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+footer {
+    background:#143774;
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
 }
 
 .container {
@@ -48,19 +70,12 @@ header {
 }
 
 .container-nav {
+  /* border: 2px solid purple; */
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
-/* .subheader, nav {
-  border: 1px solid magenta;
-} */
-
-footer {
-  text-align: center;
-  background: #f8f8f8;
-  padding:2em 0;
-}
 
 /* Navigation */
 
@@ -78,11 +93,13 @@ nav li {
 nav a {
   text-decoration: none;
   color: #707070;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   font-weight: 700;
-  padding: .25em 0; 
+  padding: .25em 0;
 }
 
-nav a:hover, 
+nav a:hover,
 nav a:focus {
   color: #1792d2;
 }
@@ -92,8 +109,12 @@ nav a:focus {
     /* padding for this item is in the parent - nav a */
 }
 
+/* .subheader, nav {
+  border: 2px solid purple;
+} */
+
 /* ********************
-Main Layout 
+Main Layout
 *********************** */
 
 main {
@@ -109,22 +130,23 @@ main {
 Screen Changes
 *********************** */
 
+@media (min-width: 675px) {
+    header {
+        text-align: left;
+    }
+
+    .container-nav {
+        flex-direction: row;
+    }
+
+}
 
 @media (max-width: 675px) {
-  header {
-    text-align: center;
-  }
-  
-  .container-nav {
-    flex-direction: column;
-  }
+    nav ul {
+        flex-direction: column;
+    }
 
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav li {
-    margin: .5em 0;
-  }
-  
+    nav li {
+        margin: .5em 0;
+    }
 }
